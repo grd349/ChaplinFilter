@@ -13,7 +13,8 @@ import os
 
 class filter():
     def __init__(self, verbose=False):
-        self.data_file = '..' + os.sep + 'Data' + os.sep + 'jitterdata_box4.txt'
+        path = '/Users/davies/Projects/ChaplinFilter'
+        self.data_file = path + os.sep + 'Data' + os.sep + 'jitterdata_box4.txt'
         try:
             from sklearn.ensemble import RandomForestRegressor
         except Exception as e:
@@ -62,7 +63,7 @@ class filter():
         return np.array(self.regr.predict(X))
 
 if __name__ == "__main__":
-    f = filter()
+    f = filter(verbose=True)
     f.read_train_data()
     results = f(f.df.Teff, f.df.logg, f.df.L)
     print(results[:,0].shape)
