@@ -10,11 +10,11 @@ Created on Friday 13 July 2018
 import numpy as np
 import pandas as pd
 import os
+from . import PACKAGEDIR
 
 class filter():
     def __init__(self, verbose=False):
-        path = '/Users/davies/Projects/ChaplinFilter'
-        self.data_file = path + os.sep + 'Data' + os.sep + 'jitterdata_box4.txt'
+        self.data_file = PACKAGEDIR + os.sep + 'Data' + os.sep + 'jitterdata_box4.txt'
         try:
             from sklearn.ensemble import RandomForestRegressor
         except Exception as e:
