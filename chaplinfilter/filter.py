@@ -63,6 +63,7 @@ class filter():
         return np.array(self.regr.predict(X))
 
 if __name__ == "__main__":
+    from chaplinfilter import filter
     f = filter(verbose=True)
     f.read_train_data()
     results = f(f.df.Teff, f.df.logg, f.df.L)
