@@ -1,10 +1,10 @@
 from setuptools import setup
 
 setup(name='chaplinfilter',
-      version='0.1',
+      version='0.1.2',
       author='Guy R. Davies',
       author_email='grd349@gmail.com',
       licence='MIT',
       packages=['chaplinfilter'],
       #url='TODO',
-      dependencies=['numpy', 'sklearn', 'pandas'])
+      install_requires=['numpy', 'scikit-learn', 'pandas'])
