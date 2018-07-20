@@ -14,7 +14,7 @@ from . import PACKAGEDIR
 
 class filter():
     def __init__(self, verbose=False):
-        self.data_file = PACKAGEDIR + os.sep + 'Data' + os.sep + 'jitterdata_box4.txt'
+        self.data_file = PACKAGEDIR + os.sep + 'data' + os.sep + 'jitterdata_box4.txt'
         try:
             from sklearn.ensemble import RandomForestRegressor
         except Exception as e:
@@ -24,7 +24,7 @@ class filter():
         self.ylables = ['tpE', 'tp1']
         self.n_estimators = 400
         self.max_depth = 20
-        self.random_state = 42
+        self.random_state = 53
         self.oob_score = True
         self.regr = []
         self.verbose=verbose
@@ -44,7 +44,8 @@ class filter():
             n_estimators=self.n_estimators,
             max_depth=self.max_depth,
             random_state=self.random_state,
-            oob_score=self.oob_score
+            oob_score=self.oob_score,
+            criterion='mae',
         )
         self.regr.fit(X, y)
         if self.verbose:
