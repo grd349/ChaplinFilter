@@ -67,7 +67,7 @@ class filter():
 
     Use the trained random forest to predict the new filter timescales.
 
-        results = filter(teff, logg, L)
+        results = f(teff, logg, L)
 
         print(results)
 
