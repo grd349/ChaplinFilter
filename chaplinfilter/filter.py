@@ -13,7 +13,9 @@ import os
 from . import PACKAGEDIR
 
 class filter():
+    ''' TODO main doc '''
     def __init__(self, verbose=False):
+        ''' TODO init '''
         self.data_file = PACKAGEDIR + os.sep + 'data' + os.sep + 'jitterdata_box4.txt'
         try:
             from sklearn.ensemble import RandomForestRegressor
@@ -30,11 +32,14 @@ class filter():
         self.verbose=verbose
 
     def read_train_data(self):
+        ''' TODO read data
+        '''
         if self.verbose:
             print(f'Reading file: {self.data_file}')
         self.df = pd.read_csv(self.data_file, sep='\s+')
 
     def train(self):
+        ''' TODO train '''
         if len(self.df) < 1:
             self.read_train_data()
         X = self.df[self.labels].values
@@ -54,6 +59,7 @@ class filter():
             print('Unusually low OOB Score - investigate')
 
     def __call__(self, Teff, logg, L):
+        ''' TODO call '''
         if self.regr == []:
             if self.verbose:
                 print('Training ...')
