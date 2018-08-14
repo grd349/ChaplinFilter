@@ -7,7 +7,7 @@ from setuptools import setup
 # Prepare and send a new release to PyPI
 if "release" in sys.argv[-1]:
     os.system("python3 setup.py sdist")
-    os.system("python3 -m twine upload dist/* --verbose")
+    os.system("python3 -m twine upload dist/*")
     os.system("rm -rf dist/*")
     sys.exit()
 
