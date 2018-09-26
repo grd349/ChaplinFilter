@@ -73,7 +73,7 @@ class filter():
 
     '''
     def __init__(self, verbose=False):
-        self.data_file = PACKAGEDIR + os.sep + 'data' + os.sep + 'jitterdata_box4.txt'
+        self.data_file = PACKAGEDIR + os.sep + 'data' + os.sep + 'jitterdata_box4_110818.txt'
         try:
             from sklearn.ensemble import RandomForestRegressor
         except Exception as e:
